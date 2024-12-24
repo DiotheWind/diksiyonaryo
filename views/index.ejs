@@ -1,5 +1,12 @@
 <%- include("partials/header.ejs") %>
 
-<h1>Hello, World!</h1>
+<form action="" method="post">
+    <div>
+        <label class="col-form-label col-form-label-lg mt-4" for="word">Input Word Here</label>
+        <input class="form-control form-control-lg" type="text" placeholder="Hello" id="word" name="word">
+    </div>
+
+    <button class="btn btn-primary mt-3" type="submit">Search Definition</button>
+</form>
 
 <%- include("partials/footer.ejs") %>
