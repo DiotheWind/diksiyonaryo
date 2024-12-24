@@ -1,5 +1,21 @@
 <%- include("partials/header.ejs") %>
 
-<%= definitions %>
+<h1><%= infos.word %></h1>
+<p class="mt-3"><%= infos.phonetic %></p>
+
+<% for (let meaning of infos.meanings) { %>
+    <div class="card mb-4">
+        <div class="card-body">
+          <h6 class="card-subtitle mb-2 text-body-secondary"><%= meaning.partOfSpeech %></h6>
+
+          <% for (let definition of meaning.definitions) { %>
+            <p class="card-text"><%= definition.definition %></p>
+            <% if (meaning.definitions.indexOf(definition) !== meaning.definitions.length - 1) { %>
+              <hr>
+            <% } %>
+          <% } %>
+        </div>
+    </div>
+<% } %>
 
 <%- include("partials/footer.ejs") %>

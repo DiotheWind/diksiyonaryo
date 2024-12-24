@@ -15,10 +15,10 @@ app.get("/", (req, res) => {
 app.post("/definitions", async (req, res) => {
     try {
         const word = req.body.word;
-        const definitions = await axios.get(API_URL + word);
+        const infos = await axios.get(API_URL + word);
 
         res.render("definition.ejs", {
-            definitions: JSON.stringify(definitions.data[0])
+            infos: infos.data[0]
         });
     } catch (error) {
         res.status(500).send("Error retrieving definitions");
