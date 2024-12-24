@@ -6,6 +6,7 @@ const app = express();
 const port = 3000;
 const API_URL = "https://api.dictionaryapi.dev/api/v2/entries/en/";
 
+app.use(express.static("public"));
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.get("/", (req, res) => {
