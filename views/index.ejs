@@ -1,9 +1,9 @@
 <%- include("partials/header.ejs") %>
 
-<form action="" method="post">
+<form action="/definitions" method="post">
     <div>
         <label class="col-form-label col-form-label-lg mt-4" for="word">Input Word Here</label>
-        <input class="form-control form-control-lg" type="text" placeholder="Hello" id="word" name="word">
+        <input class="form-control form-control-lg" type="text" placeholder="Hello" id="word" name="word" required>
     </div>
 
     <button class="btn btn-primary mt-3" type="submit">Search Definition</button>
