@@ -17,11 +17,11 @@ app.post("/definitions", async (req, res) => {
         const word = req.body.word;
         const infos = await axios.get(API_URL + word);
 
-        res.render("definition.ejs", {
+        res.render("definitions.ejs", {
             infos: infos.data[0]
         });
     } catch (error) {
-        res.status(500).send("Error retrieving definitions");
+        res.render("error.ejs", { error: error.response.data.message });
     }
 
 });
